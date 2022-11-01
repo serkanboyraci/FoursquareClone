@@ -55,6 +55,23 @@ class ViewController: UIViewController {
 
     @IBAction func signInClicked(_ sender: Any) {
         
+        if usernameText.text != "" && passwordText.text != "" {
+            
+            PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!) { (user, error) in
+                if error != nil {
+                    self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
+                } else {
+                    //segue
+                    print("welcome")
+                    print(user?.username)
+                }
+            }
+            
+            
+        } else {
+            makeAlert(titleInput: "Error", messageInput: "Username/Password ???")
+        }
+        
         
         
     }
