@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		35D33D1946C79C5AC704E866 /* Pods_FoursquareClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB1D901316C65EB614B1227 /* Pods_FoursquareClone.framework */; };
+		606040152911B6EB00A3EAAC /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606040142911B6EB00A3EAAC /* PlacesVC.swift */; };
 		60F8005C290DD6A40004A15D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8005B290DD6A40004A15D /* AppDelegate.swift */; };
 		60F8005E290DD6A40004A15D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8005D290DD6A40004A15D /* SceneDelegate.swift */; };
-		60F80060290DD6A40004A15D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8005F290DD6A40004A15D /* ViewController.swift */; };
+		60F80060290DD6A40004A15D /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8005F290DD6A40004A15D /* SignUpVC.swift */; };
 		60F80063290DD6A40004A15D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F80061290DD6A40004A15D /* Main.storyboard */; };
 		60F80065290DD6A50004A15D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F80064290DD6A50004A15D /* Assets.xcassets */; };
 		60F80068290DD6A50004A15D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F80066290DD6A50004A15D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		606040142911B6EB00A3EAAC /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		60F80058290DD6A40004A15D /* FoursquareClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F8005B290DD6A40004A15D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F8005D290DD6A40004A15D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		60F8005F290DD6A40004A15D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60F8005F290DD6A40004A15D /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		60F80062290DD6A40004A15D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60F80064290DD6A50004A15D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60F80067290DD6A50004A15D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,7 +58,6 @@
 				F11A6E95BC9D0D741825BCBE /* Pods-FoursquareClone.debug.xcconfig */,
 				B5A82FB3D373C0B32412F4C6 /* Pods-FoursquareClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,7 +84,8 @@
 			children = (
 				60F8005B290DD6A40004A15D /* AppDelegate.swift */,
 				60F8005D290DD6A40004A15D /* SceneDelegate.swift */,
-				60F8005F290DD6A40004A15D /* ViewController.swift */,
+				60F8005F290DD6A40004A15D /* SignUpVC.swift */,
+				606040142911B6EB00A3EAAC /* PlacesVC.swift */,
 				60F80061290DD6A40004A15D /* Main.storyboard */,
 				60F80064290DD6A50004A15D /* Assets.xcassets */,
 				60F80066290DD6A50004A15D /* LaunchScreen.storyboard */,
@@ -207,8 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60F80060290DD6A40004A15D /* ViewController.swift in Sources */,
+				60F80060290DD6A40004A15D /* SignUpVC.swift in Sources */,
 				60F8005C290DD6A40004A15D /* AppDelegate.swift in Sources */,
+				606040152911B6EB00A3EAAC /* PlacesVC.swift in Sources */,
 				60F8005E290DD6A40004A15D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

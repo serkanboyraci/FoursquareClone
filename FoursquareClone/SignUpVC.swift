@@ -10,7 +10,7 @@ import Parse
 
 
 
-class ViewController: UIViewController {
+class SignUpVC: UIViewController {
 
     
     @IBOutlet var usernameText: UITextField!
@@ -46,7 +46,13 @@ class ViewController: UIViewController {
                 print(objects)
             }
         }*/
-          
+        
+        /* it is not worked. we have to use it SceneDelegate.swift
+         let currentUser = PFUser.current()
+        //print(currentUser?.username) // we can see the usernam.
+        if currentUser != nil {
+            performSegue(withIdentifier: "toPlacesVC", sender: nil) //it is not worked.
+        }*/
         
         
         

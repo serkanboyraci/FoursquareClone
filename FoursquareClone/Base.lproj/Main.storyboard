@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoursquareClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignUpVC" customModule="FoursquareClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +74,7 @@
                             <constraint firstItem="3Uy-r4-Okk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xvt-5J-4rR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hdl-XD-KDH"/>
                     <connections>
                         <outlet property="passwordText" destination="ol3-kd-hn2" id="hkv-u8-N74"/>
                         <outlet property="usernameText" destination="xmA-dH-KNf" id="mIM-0a-9an"/>
@@ -109,6 +110,7 @@
                     <navigationItem key="navigationItem" id="2aU-rd-bT5"/>
                     <connections>
                         <outlet property="tableView" destination="DwW-Jx-IY7" id="yRd-70-Xo3"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignUpVC" modalPresentationStyle="fullScreen" id="egX-g9-u6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWa-L2-DGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,7 +120,7 @@
         <!--Navigation Controller-->
         <scene sceneID="XWc-ER-Chr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J2p-or-fA4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" id="J2p-or-fA4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="dXo-0Z-WhK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BPG-gU-jxX">
