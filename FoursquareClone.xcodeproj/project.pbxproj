@@ -10,6 +10,7 @@
 		35D33D1946C79C5AC704E866 /* Pods_FoursquareClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB1D901316C65EB614B1227 /* Pods_FoursquareClone.framework */; };
 		606040152911B6EB00A3EAAC /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606040142911B6EB00A3EAAC /* PlacesVC.swift */; };
 		60604017291316A000A3EAAC /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60604016291316A000A3EAAC /* AddPlaceVC.swift */; };
+		6060401929166D5800A3EAAC /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6060401829166D5800A3EAAC /* MapVC.swift */; };
 		60F8005C290DD6A40004A15D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8005B290DD6A40004A15D /* AppDelegate.swift */; };
 		60F8005E290DD6A40004A15D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8005D290DD6A40004A15D /* SceneDelegate.swift */; };
 		60F80060290DD6A40004A15D /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8005F290DD6A40004A15D /* SignUpVC.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		606040142911B6EB00A3EAAC /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		60604016291316A000A3EAAC /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
+		6060401829166D5800A3EAAC /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		60F80058290DD6A40004A15D /* FoursquareClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F8005B290DD6A40004A15D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F8005D290DD6A40004A15D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				60F8005F290DD6A40004A15D /* SignUpVC.swift */,
 				606040142911B6EB00A3EAAC /* PlacesVC.swift */,
 				60604016291316A000A3EAAC /* AddPlaceVC.swift */,
+				6060401829166D5800A3EAAC /* MapVC.swift */,
 				60F80061290DD6A40004A15D /* Main.storyboard */,
 				60F80064290DD6A50004A15D /* Assets.xcassets */,
 				60F80066290DD6A50004A15D /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60F80060290DD6A40004A15D /* SignUpVC.swift in Sources */,
+				6060401929166D5800A3EAAC /* MapVC.swift in Sources */,
 				60F8005C290DD6A40004A15D /* AppDelegate.swift in Sources */,
 				606040152911B6EB00A3EAAC /* PlacesVC.swift in Sources */,
 				60604017291316A000A3EAAC /* AddPlaceVC.swift in Sources */,
