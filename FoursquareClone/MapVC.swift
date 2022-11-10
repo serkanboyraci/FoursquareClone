@@ -19,6 +19,8 @@ class MapVC: UIViewController {
         // we couldnt see save button. fot this, we add navigationcontroller to mapvc
         
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backButtonclicked))
+        
+        print(PlaceModel.sharedInstance.placeName)
 
 
     }
