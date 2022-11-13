@@ -76,6 +76,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @objc func saveButtonClicked() {
         
+        
         let placeModel = PlaceModel.sharedInstance // to take names, types and etc.
         
         let object = PFObject(className: "Places") // to save our places to class
