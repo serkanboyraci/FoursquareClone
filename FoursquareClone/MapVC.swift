@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -14,8 +15,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
     // to save parse as String
-    var chosenLatitude = ""
-    var chosenLongitude = ""
+    //var chosenLatitude = "" us'ng with placemodel.sharedintance
+    //var chosenLongitude = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +55,10 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             
             self.mapView.addAnnotation(annotation)
             
-            self.chosenLatitude = String(coordinates.latitude)
-            self.chosenLongitude = String(coordinates.longitude)
+            //self.chosenLatitude = String(coordinates.latitude)
+            //self.chosenLongitude = String(coordinates.longitude)
+            PlaceModel.sharedInstance.placeLatitude = String(coordinates.latitude)
+            PlaceModel.sharedInstance.placeLongitude = String(coordinates.longitude)
         }
             
     }
@@ -72,7 +75,36 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     @objc func saveButtonClicked() {
-        //parse
+        
+        let placeModel = PlaceModel.sharedInstance // to take names, types and etc.
+        
+        let object = PFObject(className: "Places") // to save our places to class
+        object["name"] = placeModel.placeName
+        object["type"] = placeModel.placeType
+        object["describe"] = placeModel.placeDescribe
+        //object["latitude"] = self.chosenLatitude // not right way. you can add placemodel extra 2 variables.
+        //object["longitude"] = self.chosenLongitude //
+        object["latitude"] = placeModel.placeLatitude
+        object["longitude"] = placeModel.placeLongitude
+        
+        // to save image
+        if let imageData = placeModel.placeImageView.jpegData(compressionQuality: 0.5) {
+            object["image"] = PFFileObject(name: "image.jpg", data: imageData)
+        }
+        
+        object.saveInBackground { (success, error) in
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okButton)
+                self.present(alert, animated: true, completion: nil)
+                
+            } else {
+                self.performSegue(withIdentifier: "fromMapVCtoPlacesVC", sender: nil)
+            }
+        }
+        
+        
         
     }
     @objc func backButtonclicked() {
