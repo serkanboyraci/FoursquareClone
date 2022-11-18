@@ -79,7 +79,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         let placeModel = PlaceModel.sharedInstance // to take names, types and etc.
         
-        let object = PFObject(className: "Places") // to save our places to class
+        let object = PFObject(className: "Places") // to save our places to class, we have to use PF objects.
         object["name"] = placeModel.placeName
         object["type"] = placeModel.placeType
         object["describe"] = placeModel.placeDescribe
@@ -88,17 +88,14 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         object["latitude"] = placeModel.placeLatitude
         object["longitude"] = placeModel.placeLongitude
         
-        // to save image
+        // to save image-coredata,firebase.sqlite like this
         if let imageData = placeModel.placeImageView.jpegData(compressionQuality: 0.5) {
-            object["image"] = PFFileObject(name: "image.jpg", data: imageData)
+            object["image"] = PFFileObject(name: "image.jpg", data: imageData) // to add column which saves as PFFile to add image
         }
         
         object.saveInBackground { (success, error) in
             if error != nil {
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(okButton)
-                self.present(alert, animated: true, completion: nil)
+                self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
                 
             } else {
                 self.performSegue(withIdentifier: "fromMapVCtoPlacesVC", sender: nil)
@@ -113,6 +110,13 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         self.dismiss(animated: true)
         
+    }
+    
+    func makeAlert(titleInput: String, messageInput : String) {
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
     }
     
 

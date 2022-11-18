@@ -44,7 +44,7 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     
                     for object in objects! {
                         if let placeName = object.object(forKey: "name") as? String  { //to give us from parse
-                            if let placeId = object.objectId as? String {
+                            if let placeId = object.objectId  {
                                 self.placeNameArray.append(placeName)
                                 self.placeIdArray.append(placeId)
                             }
