@@ -102,10 +102,10 @@
                         <viewLayoutGuide key="safeArea" id="6IA-rN-3lw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DwW-Jx-IY7" firstAttribute="centerY" secondItem="2EV-0m-Gop" secondAttribute="centerY" id="2be-wQ-zlb"/>
-                            <constraint firstItem="6IA-rN-3lw" firstAttribute="bottom" secondItem="DwW-Jx-IY7" secondAttribute="bottom" constant="12" id="UlA-bq-1Dl"/>
-                            <constraint firstItem="DwW-Jx-IY7" firstAttribute="centerX" secondItem="2EV-0m-Gop" secondAttribute="centerX" id="Wht-Ek-ku3"/>
-                            <constraint firstItem="DwW-Jx-IY7" firstAttribute="leading" secondItem="6IA-rN-3lw" secondAttribute="leading" id="zeT-uh-cGd"/>
+                            <constraint firstItem="DwW-Jx-IY7" firstAttribute="centerY" secondItem="2EV-0m-Gop" secondAttribute="centerY" id="6Mh-hA-AjP"/>
+                            <constraint firstItem="DwW-Jx-IY7" firstAttribute="leading" secondItem="6IA-rN-3lw" secondAttribute="leading" id="GYf-0d-uHV"/>
+                            <constraint firstItem="DwW-Jx-IY7" firstAttribute="centerX" secondItem="2EV-0m-Gop" secondAttribute="centerX" id="NU4-NN-03M"/>
+                            <constraint firstItem="6IA-rN-3lw" firstAttribute="bottom" secondItem="DwW-Jx-IY7" secondAttribute="bottom" constant="12" id="VH9-S3-qFu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2aU-rd-bT5"/>
@@ -348,6 +348,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BrZ-RZ-j7v"/>
         <segue reference="CKs-X0-7fX"/>
     </inferredMetricsTieBreakers>
     <resources>

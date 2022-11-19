@@ -14,6 +14,7 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var placeNameArray = [String]() // to take only name and Id from parse
     var placeIdArray = [String]()
+    var selectedPlaceId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,21 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //before segue what will we do.
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC // first we have to save detailsVC as destination
+            destinationVC.chosenPlaceId = selectedPlaceId
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //after tapping row at tableview, what will we do.
+        selectedPlaceId = placeIdArray[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    
+    
+    
+    
     // to set tableviewdelegate and data source
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()

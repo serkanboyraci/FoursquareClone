@@ -7,6 +7,8 @@
 
 import UIKit
 import MapKit
+import Parse
+
 
 class DetailsVC: UIViewController {
     
@@ -20,8 +22,20 @@ class DetailsVC: UIViewController {
     
     @IBOutlet var detailsMapView: MKMapView!
     
+    var chosenPlaceId = "" // to equaled ID to other side
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let query = PFQuery(className: "Places")
+        query.whereKey("objectId", equalTo: chosenPlaceId)
+        query.findObjectsInBackground { (objects, error) in
+            if error != nil {
+                
+            } else {
+                print(objects)
+            }
+        }
 
 
     }
