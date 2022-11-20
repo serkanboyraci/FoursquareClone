@@ -10,7 +10,7 @@ import MapKit
 import Parse
 
 
-class DetailsVC: UIViewController {
+class DetailsVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var detailsImageView: UIImageView!
     
@@ -31,6 +31,7 @@ class DetailsVC: UIViewController {
         super.viewDidLoad()
         
         getDataFromParse()
+        detailsMapView.delegate = self // bcause of MKMapViewDelegate
         
         
 
@@ -93,17 +94,53 @@ class DetailsVC: UIViewController {
                     annotation.title = self.detailsNameLabel.text!
                     annotation.subtitle = self.detailsTypeLabel.text!
                     self.detailsMapView.addAnnotation(annotation)
-                    
-                        
-                    
-                    
-                    
                 }
             }
         }
-
+    }
+    // annotations to add navigation-- first add MKMapViewDelegate
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? { //to add i button
+        if annotation is MKUserLocation { // if there is user annotation, we dont want to use it.
+            return nil
+        }
+        
+        let reuseId = "pin" // to use it easily reuseId
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        
+        if pinView == nil {
+            pinView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.canShowCallout = true // after tapping adding and showing some image or sth
+            let button = UIButton(type: .detailDisclosure) // adding i image
+            pinView?.rightCalloutAccessoryView = button
+        } else {
+            pinView?.annotation = annotation // if there is any annotation define as it
+        }
+        return pinView // to use pinView
     }
     
+    // after tapping button write calloutAccesory...
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if self.chosenLongitude != 0.0 && self.chosenLatitude != 0.0 { // to control latitude and longitude
+            let requestLocation = CLLocation(latitude: self.chosenLatitude, longitude: self.chosenLongitude)
+                
+            CLGeocoder().reverseGeocodeLocation(requestLocation) { (placemarks, error) in
+                if let placemark = placemarks {
+                    
+                    if placemark.count > 0 { //contro there is somewhere
+                        let mkPlaceMark = MKPlacemark(placemark: placemark[0])
+                        let mapItem = MKMapItem(placemark: mkPlaceMark) // to open navigation and placemark is used for this
+                        mapItem.name = self.detailsNameLabel.text
+                        
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving] // beacuse of needed launchoptions we define this type as a driving as default.
+                         
+                        mapItem.openInMaps(launchOptions: launchOptions) // we need launch options here.
+                    }
+                }
+                
+            }
+        }
+    }
 
 
 }
